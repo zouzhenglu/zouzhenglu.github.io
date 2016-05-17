@@ -1,4 +1,5 @@
-﻿# Android状态栏黑色字体
+
+# Android状态栏黑色字体
 
 标签（空格分隔）： android 状态栏 statusbar
 
