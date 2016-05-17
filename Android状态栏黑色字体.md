@@ -1,11 +1,9 @@
-
 # Android状态栏黑色字体
 
 标签（空格分隔）： android 状态栏 statusbar
 
 ---
 [TOC]
-
 ###前言
 
 > [如果你只关心解决方案，请点我](#解决方案)
@@ -44,44 +42,44 @@
     //设置状态栏透明
     StatusBarProxy.setImmersedWindow(getWindow(), true);
 
-```
+```android
     /**
-	 * 设置沉浸式窗口，设置成功后，状态栏则透明显示
-	 * @param window 需要设置的窗口
-	 * @param immersive 是否把窗口设置为沉浸
-	 * @return boolean 成功执行返回true
-	 */
-	@TargetApi(Build.VERSION_CODES.KITKAT)
-	public static boolean setImmersedWindow(Window window, boolean immersive) {
-		boolean result = false;
-		if (window != null) {
-			WindowManager.LayoutParams lp = window.getAttributes();
-			int trans_status = 0;
-			Field flags;
-			if (android.os.Build.VERSION.SDK_INT < 19) {
-				try {
-					trans_status = 1 << 6;
-					flags = lp.getClass().getDeclaredField("meizuFlags");
-					flags.setAccessible(true);
-					int value = flags.getInt(lp);
-					if (immersive) {
-						value = value | trans_status;
-					} else {
-						value = value & ~trans_status;
-					}
-					flags.setInt(lp, value);
-					result = true;
-				} catch (Exception e) {
-					Log.e(TAG, "setImmersedWindow: failed");
-				}
-			} else {
-				lp.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-				window.setAttributes(lp);
-				result = true;
-			}
-		}
-		return result;
-	}
+     * 设置沉浸式窗口，设置成功后，状态栏则透明显示
+     * @param window 需要设置的窗口
+     * @param immersive 是否把窗口设置为沉浸
+     * @return boolean 成功执行返回true
+     */
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    public static boolean setImmersedWindow(Window window, boolean immersive) {
+        boolean result = false;
+        if (window != null) {
+            WindowManager.LayoutParams lp = window.getAttributes();
+            int trans_status = 0;
+            Field flags;
+            if (android.os.Build.VERSION.SDK_INT < 19) {
+                try {
+                    trans_status = 1 << 6;
+                    flags = lp.getClass().getDeclaredField("meizuFlags");
+                    flags.setAccessible(true);
+                    int value = flags.getInt(lp);
+                    if (immersive) {
+                        value = value | trans_status;
+                    } else {
+                        value = value & ~trans_status;
+                    }
+                    flags.setInt(lp, value);
+                    result = true;
+                } catch (Exception e) {
+                    Log.e(TAG, "setImmersedWindow: failed");
+                }
+            } else {
+                lp.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+                window.setAttributes(lp);
+                result = true;
+            }
+        }
+        return result;
+    }
 ```
 在加入上述代码后，在flyme5的系统,走的是else分支，调用的是android系统的原生代码，此时，系统进入沉浸式模式，界面会上移statusBar高度，由于没有<19的魅族手机，无法测试，如果有人测试出结果，烦请不吝赐教。我会补充相应内容。
 
@@ -105,7 +103,7 @@ condF(yes)->e
 
 
 ####MIUI
-```
+```android
 /**
  *设置状态栏黑色字体图标，
  * 适配4.4以上版本MIUIV、Flyme和6.0以上版本其他Android
@@ -128,7 +126,7 @@ public static int StatusBarLightMode(Activity activity){
 }
 ```
 ####flyme4+
-```
+```android
 /**
  * 设置状态栏图标为深色和魅族特定的文字风格
  * 可以用来判断是否为Flyme用户
@@ -167,13 +165,13 @@ public static boolean FlymeSetStatusBarLightMode(Window window, boolean dark) {
 ```
 #### android6.0+
 #####1.代码设置
-```
+```android
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             activity.getWindow().getDecorView().setSystemUiVisibility( View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
    }
 ```
 #####2.style属性设置
-```
+```android
 <item name="android:windowLightStatusBar">true</item>
 ```
 
