@@ -16,14 +16,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void lightMode2(View view) {
-        Helper.statusBarLightMode(this, Helper.MIUI);
-        Helper.statusBarLightMode(this, Helper.FLYME);
+//        Helper.statusBarLightMode(this, Helper.MIUI);
+//        Helper.statusBarLightMode(this, Helper.FLYME);
         Helper.statusBarLightMode(this, Helper.ANDROID_M);
     }
 
     public void darkMode(View view) {
-        Helper.statusBarDarkMode(this, Helper.MIUI);
-        Helper.statusBarDarkMode(this, Helper.FLYME);
+//        Helper.statusBarDarkMode(this, Helper.MIUI);
+//        Helper.statusBarDarkMode(this, Helper.FLYME);
         Helper.statusBarDarkMode(this, Helper.ANDROID_M);
     }
 }

@@ -42,8 +42,7 @@ public class Helper {
                 result = MIUI;
             } else if (new FlymeHelper().setStatusBarLightMode(activity, true)) {
                 result = FLYME;
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            } else if (new AndroidMHelper().setStatusBarLightMode(activity, true)) {
                 result = ANDROID_M;
             }
         }
@@ -54,7 +53,7 @@ public class Helper {
      * 已知系统类型时，设置状态栏黑色字体图标。
      * 适配4.4以上版本MIUI6、Flyme和6.0以上版本其他Android
      *
-     * @param type     1:MIUI 2:Flyme 3:android6.0
+     * @param type 1:MIUI 2:Flyme 3:android6.0
      */
     public static void statusBarLightMode(Activity activity, @SystemType int type) {
         statusBarMode(activity, type, true);
