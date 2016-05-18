@@ -2,7 +2,7 @@
 <resources>
 
     <style name="AppTheme" parent="BaseTheme">
-        <!--直接生效，状态栏文字颜色变成黑色，不会导致屏幕上移-->
+        <!--直接生效，状态栏文字颜色变成黑色，非沉浸式-->
         <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

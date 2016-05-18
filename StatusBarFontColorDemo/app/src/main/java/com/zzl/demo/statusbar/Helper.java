@@ -3,7 +3,6 @@ package com.zzl.demo.statusbar;
 import android.app.Activity;
 import android.os.Build;
 import android.support.annotation.IntDef;
-import android.view.View;
 import com.zzl.demo.statusbar.helper.AndroidMHelper;
 import com.zzl.demo.statusbar.helper.FlymeHelper;
 import com.zzl.demo.statusbar.helper.MIUIHelper;
@@ -16,6 +15,7 @@ import java.lang.annotation.RetentionPolicy;
  */
 public class Helper {
     @IntDef({
+            OTHER,
             MIUI,
             FLYME,
             ANDROID_M
@@ -25,9 +25,11 @@ public class Helper {
 
     }
 
+    public static final int OTHER = -1;
     public static final int MIUI = 1;
     public static final int FLYME = 2;
     public static final int ANDROID_M = 3;
+
 
     /**
      * 设置状态栏黑色字体图标，
