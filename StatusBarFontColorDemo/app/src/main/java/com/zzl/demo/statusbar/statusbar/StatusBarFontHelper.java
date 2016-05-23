@@ -37,14 +37,14 @@ public class StatusBarFontHelper {
      *
      * @return 1:MIUI 2:Flyme 3:android6.0
      */
-    public static int statusBarLightMode(Activity activity) {
+    public static int setStatusBarMode(Activity activity, boolean isFontColorDark) {
         @SystemType int result = 0;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            if (new MIUIHelper().setStatusBarLightMode(activity, true)) {
+            if (new MIUIHelper().setStatusBarLightMode(activity, isFontColorDark)) {
                 result = MIUI;
-            } else if (new FlymeHelper().setStatusBarLightMode(activity, true)) {
+            } else if (new FlymeHelper().setStatusBarLightMode(activity, isFontColorDark)) {
                 result = FLYME;
-            } else if (new AndroidMHelper().setStatusBarLightMode(activity, true)) {
+            } else if (new AndroidMHelper().setStatusBarLightMode(activity, isFontColorDark)) {
                 result = ANDROID_M;
             }
         }
@@ -57,19 +57,19 @@ public class StatusBarFontHelper {
      *
      * @param type 1:MIUI 2:Flyme 3:android6.0
      */
-    public static void statusBarLightMode(Activity activity, @SystemType int type) {
-        statusBarMode(activity, type, true);
+    public static void setLightMode(Activity activity, @SystemType int type) {
+        setStatusBarMode(activity, type, true);
 
     }
 
     /**
      * 清除MIUI或flyme或6.0以上版本状态栏黑色字体
      */
-    public static void statusBarDarkMode(Activity activity, @SystemType int type) {
-        statusBarMode(activity, type, false);
+    public static void setDarkMode(Activity activity, @SystemType int type) {
+        setStatusBarMode(activity, type, false);
     }
 
-    private static void statusBarMode(Activity activity, @SystemType int type, boolean isFontColorDark) {
+    private static void setStatusBarMode(Activity activity, @SystemType int type, boolean isFontColorDark) {
         if (type == MIUI) {
             new MIUIHelper().setStatusBarLightMode(activity, isFontColorDark);
         } else if (type == FLYME) {

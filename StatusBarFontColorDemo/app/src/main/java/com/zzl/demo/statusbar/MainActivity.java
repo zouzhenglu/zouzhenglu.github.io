@@ -13,18 +13,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void lightMode1(View view) {
-        StatusBarFontHelper.statusBarLightMode(this);
+        StatusBarFontHelper.setStatusBarMode(this, true);
     }
 
     public void lightMode2(View view) {
-//        StatusBarFontHelper.statusBarLightMode(this, StatusBarFontHelper.MIUI);
-//        StatusBarFontHelper.statusBarLightMode(this, StatusBarFontHelper.FLYME);
-        StatusBarFontHelper.statusBarLightMode(this, StatusBarFontHelper.ANDROID_M);
+        StatusBarFontHelper.setLightMode(this, StatusBarFontHelper.MIUI);
+        //        StatusBarFontHelper.setStatusBarMode(this, StatusBarFontHelper.FLYME);
+        //        StatusBarFontHelper.setStatusBarMode(this, StatusBarFontHelper.ANDROID_M);
     }
 
     public void darkMode(View view) {
-//        StatusBarFontHelper.statusBarDarkMode(this, StatusBarFontHelper.MIUI);
-//        StatusBarFontHelper.statusBarDarkMode(this, StatusBarFontHelper.FLYME);
-        StatusBarFontHelper.statusBarDarkMode(this, StatusBarFontHelper.ANDROID_M);
+        StatusBarFontHelper.setDarkMode(this, StatusBarFontHelper.MIUI);
+        //        StatusBarFontHelper.setDarkMode(this, StatusBarFontHelper.FLYME);
+        //        StatusBarFontHelper.setDarkMode(this, StatusBarFontHelper.ANDROID_M);
     }
 }
