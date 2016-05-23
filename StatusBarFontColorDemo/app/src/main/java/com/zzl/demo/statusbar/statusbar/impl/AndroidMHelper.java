@@ -1,13 +1,14 @@
-package com.zzl.demo.statusbar.helper;
+package com.zzl.demo.statusbar.statusbar.impl;
 
 import android.app.Activity;
 import android.os.Build;
 import android.view.View;
+import com.zzl.demo.statusbar.statusbar.IStatusBarFontHelper;
 
 /**
  * Created by kzl on 2016/5/17
  */
-public class AndroidMHelper implements IHelper {
+public class AndroidMHelper implements IStatusBarFontHelper {
     /**
      * @return if version is lager than M
      */

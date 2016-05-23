@@ -1,7 +1,8 @@
-package com.zzl.demo.statusbar.helper;
+package com.zzl.demo.statusbar.statusbar.impl;
 
 import android.app.Activity;
 import android.view.Window;
+import com.zzl.demo.statusbar.statusbar.IStatusBarFontHelper;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -9,7 +10,7 @@ import java.lang.reflect.Method;
 /**
  * Created by kzl on 2016/5/17
  */
-public class MIUIHelper implements IHelper {
+public class MIUIHelper implements IStatusBarFontHelper {
 
     /**
      * 设置状态栏字体图标为深色，需要MIUI6以上

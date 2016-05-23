@@ -1,11 +1,11 @@
-package com.zzl.demo.statusbar.helper;
+package com.zzl.demo.statusbar.statusbar;
 
 import android.app.Activity;
 
 /**
  * Created by kzl on 2016/5/17
  */
-public interface IHelper {
+public interface IStatusBarFontHelper {
      boolean setStatusBarLightMode(Activity activity, boolean isFontColorDark);
 
 }

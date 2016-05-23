@@ -1,11 +1,11 @@
-package com.zzl.demo.statusbar;
+package com.zzl.demo.statusbar.statusbar;
 
 import android.app.Activity;
 import android.os.Build;
 import android.support.annotation.IntDef;
-import com.zzl.demo.statusbar.helper.AndroidMHelper;
-import com.zzl.demo.statusbar.helper.FlymeHelper;
-import com.zzl.demo.statusbar.helper.MIUIHelper;
+import com.zzl.demo.statusbar.statusbar.impl.AndroidMHelper;
+import com.zzl.demo.statusbar.statusbar.impl.FlymeHelper;
+import com.zzl.demo.statusbar.statusbar.impl.MIUIHelper;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -13,7 +13,7 @@ import java.lang.annotation.RetentionPolicy;
 /**
  * Created by kzl on 2016/5/17
  */
-public class Helper {
+public class StatusBarFontHelper {
     @IntDef({
             OTHER,
             MIUI,

@@ -3,6 +3,7 @@ package com.zzl.demo.statusbar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import com.zzl.demo.statusbar.statusbar.StatusBarFontHelper;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -12,18 +13,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void lightMode1(View view) {
-        Helper.statusBarLightMode(this);
+        StatusBarFontHelper.statusBarLightMode(this);
     }
 
     public void lightMode2(View view) {
-//        Helper.statusBarLightMode(this, Helper.MIUI);
-//        Helper.statusBarLightMode(this, Helper.FLYME);
-        Helper.statusBarLightMode(this, Helper.ANDROID_M);
+//        StatusBarFontHelper.statusBarLightMode(this, StatusBarFontHelper.MIUI);
+//        StatusBarFontHelper.statusBarLightMode(this, StatusBarFontHelper.FLYME);
+        StatusBarFontHelper.statusBarLightMode(this, StatusBarFontHelper.ANDROID_M);
     }
 
     public void darkMode(View view) {
-//        Helper.statusBarDarkMode(this, Helper.MIUI);
-//        Helper.statusBarDarkMode(this, Helper.FLYME);
-        Helper.statusBarDarkMode(this, Helper.ANDROID_M);
+//        StatusBarFontHelper.statusBarDarkMode(this, StatusBarFontHelper.MIUI);
+//        StatusBarFontHelper.statusBarDarkMode(this, StatusBarFontHelper.FLYME);
+        StatusBarFontHelper.statusBarDarkMode(this, StatusBarFontHelper.ANDROID_M);
     }
 }
